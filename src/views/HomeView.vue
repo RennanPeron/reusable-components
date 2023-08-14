@@ -1,6 +1,6 @@
 <template>
   <main>
-    <h1>Starting!</h1>
+    <h1>Buttons</h1>
   </main>
 </template>
 

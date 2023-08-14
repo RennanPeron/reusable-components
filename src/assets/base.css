@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@500;700&family=Poppins:wght@500;600&family=Ubuntu+Mono&display=swap');
 
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 *,
 *::before,
 *::after {
@@ -8,15 +12,21 @@
   font-weight: normal;
 }
 
+ul {
+}
+
 h1,
+h1 span,
 h2,
 h3,
 h4,
 h5,
 h6 {
   font-family: 'Poppins', sans-serif;
+  font-weight: 600;
 }
 
-body {
+#app {
   font-family: 'Noto Sans', sans-serif;
+  min-height: 100dvh;
 }
