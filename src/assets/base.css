@@ -12,9 +12,6 @@
   font-weight: normal;
 }
 
-ul {
-}
-
 h1,
 h1 span,
 h2,
@@ -29,4 +26,9 @@ h6 {
 #app {
   font-family: 'Noto Sans', sans-serif;
   min-height: 100dvh;
+}
+
+span {
+  font-family: 'Ubuntu Mono', monospace;
+  font-weight: 400;
 }
