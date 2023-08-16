@@ -9,6 +9,10 @@ import { ref } from 'vue'
 
 export default {
     props: {
+        buttonText: {
+            required: false,
+            type: String
+        },
         variant: {
             required: false,
             type: String,
@@ -19,9 +23,16 @@ export default {
                 ].indexOf(value) !== -1
             }
         },
-        buttonText: {
+        size: {
             required: false,
-            type: String
+            type: String,
+            validator: function (value) {
+                return [
+                    'sm',
+                    'md',
+                    'lg',
+                ].indexOf(value) !== -1
+            }
         },
         // hover: {
         //     required: false,
@@ -55,6 +66,13 @@ export default {
                 hover = ref('bg-blue-100 text-blue-500')
                 shadow = ref('')
             }
+        }
+
+        if (props.size) {
+            if (props.size == 'sm')
+                size = ref('px-3 py-1.5')
+            else if (props.size == 'lg')
+                size = ref('px-5 py-3')
         }
 
         if (props.disableShadow)
