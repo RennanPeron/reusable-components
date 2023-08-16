@@ -37,13 +37,33 @@
     <div :class="examples">
       <!-- Button Default -->
       <div>
-        <span class="block text-gray-1">&lt;Button :variant="'text' /&gt;</span>
+        <span class="block text-gray-1">&lt;Button :variant="'text'" /&gt;</span>
         <base-button :variant="'text'" />
       </div>
       <!-- Button Hover Active -->
       <div>
         <span class="block text-gray-3">&:hover, &:focus</span>
         <base-button :variant="'text'" :hover="true" />
+      </div>
+    </div>
+    <!-- Disable Shadow -->
+    <div :class="examples">
+      <div>
+        <span class="block text-gray-1">&lt;Button :disableShadow="true" /&gt;</span>
+        <base-button :disableShadow="true" />
+      </div>
+    </div>
+    <!-- Disabled -->
+    <div :class="examples">
+      <!-- First example -->
+      <div>
+        <span class="block text-gray-1">&lt;Button :disabled="true" /&gt;</span>
+        <base-button :disabled="true" />
+      </div>
+      <!-- Second Example -->
+      <div>
+        <span class="block text-gray-1">&lt;Button :variant="'text'" :disabled="true" /&gt;</span>
+        <base-button :variant="'text'" :disabled="true" />
       </div>
     </div>
   </main>
