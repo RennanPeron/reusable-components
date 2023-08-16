@@ -34,6 +34,17 @@ export default {
                 ].indexOf(value) !== -1
             }
         },
+        color: {
+            required: false,
+            type: String,
+            validator: function (value) {
+                return [
+                    'primary',
+                    'secondary',
+                    'danger',
+                ].indexOf(value) !== -1
+            }
+        },
         // hover: {
         //     required: false,
         //     type: Boolean
@@ -73,6 +84,23 @@ export default {
                 size = ref('px-3 py-1.5')
             else if (props.size == 'lg')
                 size = ref('px-5 py-3')
+        }
+
+        if (props.color) {
+            if (props.color == 'primary') {
+                color = ref('bg-blue-600 text-white')
+                hover = ref('bg-blue-800 text-white')
+                shadow = ref('shadow-md shadow-blue-200')
+            }
+            else if (props.color == 'secondary') {
+                color = ref('bg-slate-600 text-white')
+                hover = ref('bg-slate-800 text-white')
+                shadow = ref('shadow-md shadow-slate-200')
+            } else if (props.color == 'danger') {
+                color = ref('bg-red-600 text-white')
+                hover = ref('bg-red-800 text-white')
+                shadow = ref('shadow-md shadow-red-200')
+            }
         }
 
         if (props.disableShadow)

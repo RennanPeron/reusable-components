@@ -70,6 +70,24 @@
         <base-button :size="'lg'" />
       </div>
     </section>
+    <!-- Colors -->
+    <section :class="examples">
+      <!-- Color: Primary -->
+      <div>
+        <span class="block text-gray-1 mb-3">&lt;BaseButton :color="'primary'" /&gt;</span>
+        <base-button :color="'primary'" />
+      </div>
+      <!-- Color: edium -->
+      <div>
+        <span class="block text-gray-1 mb-3">&lt;BaseButton :color="'secondary'" /&gt;</span>
+        <base-button :color="'secondary'" />
+      </div>
+      <!-- Color: arge -->
+      <div>
+        <span class="block text-gray-1 mb-3">&lt;BaseButton :color="'danger'" /&gt;</span>
+        <base-button :color="'danger'" />
+      </div>
+    </section>
   </main>
 </template>
 
