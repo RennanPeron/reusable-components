@@ -17,10 +17,10 @@ export default {
             required: false,
             type: String
         },
-        hover: {
-            required: false,
-            type: Boolean
-        },
+        // hover: {
+        //     required: false,
+        //     type: Boolean
+        // },
         disableShadow: {
             required: false,
             type: Boolean
@@ -59,7 +59,7 @@ export default {
             hover = ref('')
         }
 
-        const buttonClass = [size.value, props.hover ? hover.value : `${color.value} hover:${hover.value}`, shadow.value]
+        const buttonClass = [size.value, `${color.value} hover:${hover.value}`, shadow.value]
 
         return {
             buttonClass
