@@ -43,6 +43,11 @@
       </div>
       <!-- Second Example -->
       <div>
+        <span class="block text-gray-1">&lt;Button :variant="'outline'" :disabled="true" /&gt;</span>
+        <base-button :variant="'outline'" :disabled="true" />
+      </div>
+      <!-- Third Example -->
+      <div>
         <span class="block text-gray-1">&lt;Button :variant="'text'" :disabled="true" /&gt;</span>
         <base-button :variant="'text'" :disabled="true" />
       </div>
@@ -52,5 +57,5 @@
 
 <script setup>
 
-const examples = 'flex gap-40 w-fit mb-8'
+const examples = 'flex gap-32 w-fit mb-8'
 </script>

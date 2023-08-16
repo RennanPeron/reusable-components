@@ -11,7 +11,13 @@ export default {
     props: {
         variant: {
             required: false,
-            type: String
+            type: String,
+            validator: function (value) {
+                return [
+                    'outline',
+                    'text',
+                ].indexOf(value) !== -1
+            }
         },
         buttonText: {
             required: false,
