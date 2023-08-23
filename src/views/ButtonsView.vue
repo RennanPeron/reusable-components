@@ -1,6 +1,6 @@
 <template>
   <main>
-    <h1 class="text-gray-2 text-2xl font-medium mb-6">Buttons</h1>
+    <h2 class="text-gray-2 text-2xl font-medium mb-6">Buttons</h2>
     <!-- Default Buttons -->
     <section :class="examples">
       <!-- Button Default -->
@@ -10,17 +10,11 @@
         </span>
         <base-button />
       </div>
-    </section>
-    <!-- Variant Outline -->
-    <section :class="examples">
       <!-- Button Default -->
       <div>
         <span class="block text-gray-1 mb-3"> &lt;BaseButton :variant="'outline'" /&gt; </span>
         <base-button :variant="'outline'" />
       </div>
-    </section>
-    <!-- Variant Text -->
-    <section :class="examples">
       <!-- Button Default -->
       <div>
         <span class="block text-gray-1 mb-3">&lt;BaseButton :variant="'text'" /&gt;</span>
@@ -52,6 +46,7 @@
         <base-button :variant="'text'" :disabled="true" />
       </div>
     </section>
+    <h2 class="text-gray-2 text-2xl font-medium mb-6">Size</h2>
     <!-- Sizes -->
     <section :class="examples">
       <!-- Size Small -->
@@ -70,6 +65,7 @@
         <base-button :size="'lg'" />
       </div>
     </section>
+    <h2 class="text-gray-2 text-2xl font-medium mb-6">Colors</h2>
     <!-- Colors -->
     <section :class="examples">
       <!-- Color: Primary -->

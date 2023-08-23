@@ -45,10 +45,6 @@ export default {
                 ].indexOf(value) !== -1
             }
         },
-        // hover: {
-        //     required: false,
-        //     type: Boolean
-        // },
         disableShadow: {
             required: false,
             type: Boolean
@@ -59,7 +55,11 @@ export default {
         },
     },
     setup(props) {
-        let size = ref('px-4 py-2')
+        const size = {
+            default: ref('px-4 py-2'),
+            sm: ref('px-3 py-1.5'),
+            lg: ref('px-5 py-3')
+        }
 
         let color = ref('bg-zinc-200')
 
@@ -79,13 +79,6 @@ export default {
             }
         }
 
-        if (props.size) {
-            if (props.size == 'sm')
-                size = ref('px-3 py-1.5')
-            else if (props.size == 'lg')
-                size = ref('px-5 py-3')
-        }
-
         if (props.color) {
             if (props.color == 'primary') {
                 color = ref('bg-blue-600 text-white')
@@ -103,15 +96,11 @@ export default {
             }
         }
 
-        if (props.disableShadow)
-            shadow = ref('')
-
-        if (props.disabled) {
-            color = ref(`${color.value} grayscale text-neutral-400`)
-            hover = ref('')
-        }
-
-        const buttonClass = [size.value, `${color.value} hover:${hover.value}`, shadow.value]
+        const buttonClass = [
+            props.size ? (props.size == "sm" ? size.sm.value : props.size == "lg" ? size.lg.value : size.default.value) : size.default.value,
+            props.disableShadow ? '' : shadow.value,
+            props.disabled ? `${color.value} grayscale text-neutral-400` : `${color.value} hover:${hover.value}`
+        ]
 
         return {
             buttonClass
