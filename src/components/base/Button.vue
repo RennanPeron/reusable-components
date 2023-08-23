@@ -1,5 +1,5 @@
 <template>
-    <button type="button" class="rounded-md" :class="[buttonClass]" :disabled="disabled">
+    <button type="button" class="rounded-md flex gap-2" :class="[buttonClass]" :disabled="disabled">
         {{ buttonText ? buttonText : 'Default' }}
     </button>
 </template>
@@ -10,6 +10,10 @@ import { ref } from 'vue'
 export default {
     props: {
         buttonText: {
+            required: false,
+            type: String
+        },
+        icon: {
             required: false,
             type: String
         },
@@ -73,6 +77,7 @@ export default {
                 hover = ref('bg-blue-100 text-blue-500 border-2 border-blue-500')
             }
             else if (props.variant == 'text') {
+                size.default = ref('inline-flex')
                 color = ref('bg-white text-blue-500')
                 hover = ref('bg-blue-100 text-blue-500')
                 shadow = ref('')

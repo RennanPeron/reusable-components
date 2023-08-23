@@ -17,3 +17,7 @@
 .text-gray-3 {
   color: var(--gray-3);
 }
+
+.examples div {
+  max-width: 22rem;
+}
