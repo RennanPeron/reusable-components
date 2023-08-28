@@ -8,7 +8,7 @@
         </h1>
     </div>
 
-    <header :class="{ 'hidden': !modal.isOpen }" class="lg:block fixed h-screen col-auto bg-[#FAFBFD] pl-10 px-12 pt-12">
+    <header :class="{ 'hidden': !modal.isOpen }" class="lg:block fixed h-screen col-auto bg-[#FAFBFD] px-10 pt-4">
         <h1 class="mb-28 hidden lg:block"><span class="text-[#F7542E]">Dev</span>challengs.io</h1>
 
         <button @click.prevent="modal.toggleModal"
@@ -20,12 +20,12 @@
 
         <nav>
             <ul class="list-none grid gap-8">
-                <li>Colors</li>
-                <li>Typography</li>
-                <li>Spaces</li>
+                <li><base-button :text="'Colors'" :disabled="true" :variant="'text'" /></li>
+                <li><base-button :text="'Typography'" :disabled="true" :variant="'text'" /></li>
+                <li><base-button :text="'Spaces'" :disabled="true" :variant="'text'" /></li>
                 <li>Buttons</li>
                 <li>Inputs</li>
-                <li>Grid</li>
+                <li><base-button :text="'Grid'" :disabled="true" :variant="'text'" /></li>
             </ul>
         </nav>
     </header>

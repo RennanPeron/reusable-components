@@ -1,6 +1,6 @@
 <template>
     <button type="button" class="rounded-md flex gap-2" :class="[buttonClass]" :disabled="disabled">
-        {{ buttonText ? buttonText : 'Default' }}
+        {{ text ? text : 'Default' }}
     </button>
 </template>
 
@@ -9,7 +9,7 @@ import { ref } from 'vue'
 
 export default {
     props: {
-        buttonText: {
+        text: {
             required: false,
             type: String
         },

@@ -62,21 +62,21 @@
       </div>
       <!-- Third Example -->
       <div>
-        <span class="block text-gray-1 mb-3">&lt;BaseButton v-button-icon:end="'analytics'" :buttonText="'Analytics'"
+        <span class="block text-gray-1 mb-3">&lt;BaseButton v-button-icon:end="'analytics'" :text="'Analytics'"
           :color="'primary'" /&gt;</span>
-        <base-button v-button-icon:end="'analytics'" :buttonText="'Analytics'" :color="'primary'" />
+        <base-button v-button-icon:end="'analytics'" :text="'Analytics'" :color="'primary'" />
       </div>
       <!-- Fourth Example -->
       <div>
-        <span class="block text-gray-1 mb-3">&lt;BaseButton v-button-icon="'qr_code_scanner'" :buttonText="'QR Code'"
+        <span class="block text-gray-1 mb-3">&lt;BaseButton v-button-icon="'qr_code_scanner'" :text="'QR Code'"
           :color="'secondary'" /&gt;</span>
-        <base-button v-button-icon="'qr_code_scanner'" :buttonText="'QR Code'" :color="'secondary'" />
+        <base-button v-button-icon="'qr_code_scanner'" :text="'QR Code'" :color="'secondary'" />
       </div>
       <!-- Fifth Example -->
       <div>
-        <span class="block text-gray-1 mb-3">&lt;BaseButton v-button-icon="'wallet'" :buttonText="'Wallet'"
+        <span class="block text-gray-1 mb-3">&lt;BaseButton v-button-icon="'wallet'" :text="'Wallet'"
           :variant="'outline'" /&gt;</span>
-        <base-button v-button-icon="'wallet'" :buttonText="'Wallet'" :variant="'outline'" />
+        <base-button v-button-icon="'wallet'" :text="'Wallet'" :variant="'outline'" />
       </div>
     </section>
     <h2 class="text-gray-2 text-2xl font-medium mb-6 mt-10">Size</h2>
@@ -103,18 +103,18 @@
     <section :class="examples">
       <!-- Color: Primary -->
       <div>
-        <span class="block text-gray-1 mb-3">&lt;BaseButton :color="'primary'" /&gt;</span>
-        <base-button :color="'primary'" />
+        <span class="block text-gray-1 mb-3">&lt;BaseButton :color="'primary'" :text="'Primary'" /&gt;</span>
+        <base-button :color="'primary'" :text="'Primary'" />
       </div>
-      <!-- Color: edium -->
+      <!-- Color: Secondary -->
       <div>
-        <span class="block text-gray-1 mb-3">&lt;BaseButton :color="'secondary'" /&gt;</span>
-        <base-button :color="'secondary'" />
+        <span class="block text-gray-1 mb-3">&lt;BaseButton :color="'secondary'" :text="'Secondary'" /&gt;</span>
+        <base-button :color="'secondary'" :text="'Secondary'" />
       </div>
-      <!-- Color: arge -->
+      <!-- Color: Danger -->
       <div>
-        <span class="block text-gray-1 mb-3">&lt;BaseButton :color="'danger'" /&gt;</span>
-        <base-button :color="'danger'" />
+        <span class="block text-gray-1 mb-3">&lt;BaseButton :color="'danger'" :text="'Danger'" /&gt;</span>
+        <base-button :color="'danger'" :text="'Danger'" />
       </div>
     </section>
   </main>
