@@ -71,6 +71,8 @@ export default {
 
         let shadow = ref('shadow-md shadow-zinc-300')
 
+        const disabledColor = ref(props.variant ? props.variant == 'outline' ? 'border-2 border-zinc-400' : '' : 'bg-zinc-200')
+
         if (props.variant) {
             if (props.variant == 'outline') {
                 color = ref('bg-white text-blue-500 border-2 border-blue-500')
@@ -84,7 +86,7 @@ export default {
             }
         }
 
-        if (props.color) {
+        if (props.color && !props.disabled) {
             if (props.color == 'primary') {
                 color = ref('bg-blue-600 text-white')
                 hover = ref('bg-blue-800 text-white')
@@ -103,8 +105,8 @@ export default {
 
         const buttonClass = [
             props.size ? (props.size == "sm" ? size.sm.value : props.size == "lg" ? size.lg.value : size.default.value) : size.default.value,
-            props.disableShadow ? '' : shadow.value,
-            props.disabled ? `${color.value} grayscale text-neutral-400` : `${color.value} hover:${hover.value}`
+            props.disableShadow || props.disabled ? '' : shadow.value,
+            props.disabled ? `${disabledColor.value} text-neutral-400` : `${color.value} hover:${hover.value}`
         ]
 
         return {

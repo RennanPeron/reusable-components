@@ -56,9 +56,9 @@
       </div>
       <!-- Second Example -->
       <div>
-        <span class="block text-gray-1 mb-3">&lt;BaseButton v-button-icon:end="'payment'" :buttonText="'Payment'"
+        <span class="block text-gray-1 mb-3">&lt;BaseButton v-button-icon:end="'payment'"
           :variant="'text'" /&gt;</span>
-        <base-button v-button-icon:end="'payment'" :buttonText="'Payment'" :variant="'text'" />
+        <base-button v-button-icon:end="'payment'" :variant="'text'" />
       </div>
       <!-- Third Example -->
       <div>
