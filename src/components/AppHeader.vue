@@ -23,8 +23,16 @@
                 <li><base-button :text="'Colors'" :disabled="true" :variant="'text'" /></li>
                 <li><base-button :text="'Typography'" :disabled="true" :variant="'text'" /></li>
                 <li><base-button :text="'Spaces'" :disabled="true" :variant="'text'" /></li>
-                <li>Buttons</li>
-                <li>Inputs</li>
+                <li>
+                    <router-link to="buttons">
+                        Buttons
+                    </router-link>
+                </li>
+                <li>
+                    <router-link to="inputs">
+                        Inputs
+                    </router-link>
+                </li>
                 <li><base-button :text="'Grid'" :disabled="true" :variant="'text'" /></li>
             </ul>
         </nav>
