@@ -67,7 +67,7 @@ export default {
 
         let color = ref('bg-zinc-200')
 
-        let hover = ref('bg-zinc-400')
+        let hover = ref('hover:bg-zinc-400 active:bg-zinc-500')
 
         let shadow = ref('shadow-md shadow-zinc-300')
 
@@ -76,12 +76,13 @@ export default {
         if (props.variant) {
             if (props.variant == 'outline') {
                 color = ref('bg-white text-blue-500 border-2 border-blue-500')
-                hover = ref('bg-blue-100 text-blue-500 border-2 border-blue-500')
+                hover = ref('hover:bg-blue-100 text-blue-500 border-2 border-blue-500 active:bg-blue-200')
             }
             else if (props.variant == 'text') {
                 size.default = ref('inline-flex')
                 color = ref('bg-white text-blue-500')
-                hover = ref('bg-blue-100 text-blue-500')
+                // hover = ref('hover:bg-blue-100 text-blue-500 active:bg-blue-200')
+                hover = ref('hover:text-blue-500 active:text-blue-600')
                 shadow = ref('')
             }
         }
@@ -89,16 +90,16 @@ export default {
         if (props.color && !props.disabled) {
             if (props.color == 'primary') {
                 color = ref('bg-blue-600 text-white')
-                hover = ref('bg-blue-800 text-white')
+                hover = ref('hover:bg-blue-800 text-white active:bg-blue-900')
                 shadow = ref('shadow-md shadow-blue-200')
             }
             else if (props.color == 'secondary') {
                 color = ref('bg-slate-600 text-white')
-                hover = ref('bg-slate-800 text-white')
+                hover = ref('hover:bg-slate-800 text-white active:bg-slate-900')
                 shadow = ref('shadow-md shadow-slate-200')
             } else if (props.color == 'danger') {
                 color = ref('bg-red-600 text-white')
-                hover = ref('bg-red-800 text-white')
+                hover = ref('hover:bg-red-800 text-white active:bg-red-900')
                 shadow = ref('shadow-md shadow-red-200')
             }
         }
@@ -106,7 +107,7 @@ export default {
         const buttonClass = [
             props.size ? (props.size == "sm" ? size.sm.value : props.size == "lg" ? size.lg.value : size.default.value) : size.default.value,
             props.disableShadow || props.disabled ? '' : shadow.value,
-            props.disabled ? `${disabledColor.value} text-neutral-400` : `${color.value} hover:${hover.value}`
+            props.disabled ? `${disabledColor.value} text-neutral-400` : `${color.value} ${hover.value}`
         ]
 
         return {
