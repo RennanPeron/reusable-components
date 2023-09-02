@@ -21,3 +21,9 @@
 .examples div {
   max-width: 22rem;
 }
+
+*,
+*:focus,
+*:hover {
+  outline: none;
+}

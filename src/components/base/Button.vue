@@ -1,5 +1,5 @@
 <template>
-    <button type="button" class="rounded-md flex gap-2" :class="[buttonClass]" :disabled="disabled">
+    <button type="button" class="rounded-md flex h-fit gap-2" :class="[buttonClass]" :disabled="disabled">
         {{ text ? text : 'Default' }}
     </button>
 </template>
