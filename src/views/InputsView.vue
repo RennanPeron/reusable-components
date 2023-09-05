@@ -11,15 +11,64 @@
             </div>
             <div>
                 <span class="block text-gray-1 mb-3">
-                    &lt;BaseInput :error="true" /&gt;
+                    &lt;BaseInput error="true" /&gt;
                 </span>
-                <base-input :error="true" />
+                <base-input error="true" />
             </div>
             <div>
                 <span class="block text-gray-1 mb-3">
-                    &lt;BaseInput :disabled="true" /&gt;
+                    &lt;BaseInput disabled="true" /&gt;
                 </span>
-                <base-input :disabled="true" />
+                <base-input disabled="true" />
+            </div>
+        </section>
+        <!-- Helper Text -->
+        <h2 class="text-gray-2 text-2xl font-medium mb-6 first:mt-0 mt-10">Helper Text</h2>
+        <section class="examples flex flex-wrap flex=row w-fit mb-8 gap-x-16 gap-y-8 lg:gap-x-32">
+            <div>
+                <span class="block text-gray-1 mb-3">
+                    &lt;BaseInput helperText="'Some interesting text'" /&gt;
+                </span>
+                <base-input helperText="Some interesting text" />
+            </div>
+            <div>
+                <span class="block text-gray-1 mb-3">
+                    &lt;BaseInput helperText="Some interesting text" :error="true" /&gt;
+                </span>
+                <base-input helperText="Some interesting text" :error="true" />
+            </div>
+        </section>
+        <!-- Icons -->
+        <!-- Sizes -->
+        <h2 class="text-gray-2 text-2xl font-medium mb-6 first:mt-0 mt-10">Sizes</h2>
+        <section class="examples flex flex-wrap flex=row w-fit mb-8 gap-x-16 gap-y-8 lg:gap-x-32">
+            <div>
+                <span class="block text-gray-1 mb-3">
+                    &lt;BaseInput size="sm" /&gt;
+                </span>
+                <base-input size="'sm'" />
+            </div>
+            <div>
+                <span class="block text-gray-1 mb-3">
+                    &lt;BaseInput size="md" /&gt;
+                </span>
+                <base-input size="'md'" />
+            </div>
+        </section>
+        <div>
+            <span class="block text-gray-1 mb-3">
+                &lt;BaseInput size="fullWidth" /&gt;
+            </span>
+            <base-input size="'fullWidth'" />
+        </div>
+        <!-- Multiline -->
+        <h2 class="text-gray-2 text-2xl font-medium mb-6 first:mt-0 mt-10">Multiline input</h2>
+        <section class="examples flex flex-wrap flex=row w-fit mb-8 gap-x-16 gap-y-8 lg:gap-x-32">
+            <div>
+                <span class="block text-gray-1 mb-3">
+                    &lt;BaseInput size="sm" /&gt;
+                </span>
+                <base-input multiline="true" />
             </div>
         </section>
     </main>
@@ -27,4 +76,6 @@
 
 <script setup>
 import { ref } from 'vue';
+
+const helperText = ref('Texto ajudante')
 </script>

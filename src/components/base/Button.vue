@@ -31,6 +31,7 @@ export default {
         size: {
             required: false,
             type: String,
+            default: 'md',
             validator: function (value) {
                 return [
                     'sm',
@@ -106,7 +107,7 @@ export default {
         }
 
         const buttonClass = [
-            props.size ? (props.size == "sm" ? size.sm.value : props.size == "lg" ? size.lg.value : size.default.value) : size.default.value,
+            props.size == "sm" ? size.sm.value : props.size == "lg" ? size.lg.value : size.default.value,
             props.disableShadow || props.disabled ? '' : shadow.value,
             props.disabled ? `${disabledColor.value} text-neutral-400` : `${color.value} ${hover.value}`
         ]

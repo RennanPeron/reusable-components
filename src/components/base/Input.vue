@@ -6,13 +6,24 @@
         <span class="block mb-1 noto-sans text-xs">
             Label
         </span>
-        <input type="text" placeholder="Placeholder" class="rounded-lg border-2 hover:border-gray-900" :class="{
-            'focus:border-blue-400 border-gray-400 text-gray-3': !error,
-            'focus:border-red-600 border-red-400 text-gray-3': error,
-            'px-3 py-4': !size || size == 'md',
-            'bg-gray-200': disabled
-        }" :disabled="disabled">
+        <!-- Textarea Option -->
+        <input v-if="!multiline" type="text" placeholder="Placeholder" class="rounded-lg border-2 hover:border-gray-900"
+            :class="[classList], {
+                'focus:border-blue-400 border-gray-400 text-gray-3': !error,
+                'focus:border-red-600 border-red-400 text-gray-3': error,
+                'bg-gray-200': disabled
+            }" :disabled="disabled">
+
+        <textarea v-else placeholder="Placeholder" class="rounded-lg border-2 p-5 overflow-hidden hover:border-gray-900"
+            :class="{
+                'focus:border-blue-400 border-gray-400 text-gray-3': !error,
+                'focus:border-red-600 border-red-400 text-gray-3': error,
+                'bg-gray-200': disabled
+            }
+                " :disabled="disabled" @input="resize($event)"></textarea>
     </label>
+    <p class="mt-1 noto-sans text-[0.652rem]" :class="{ 'text-gray-3': !error, 'text-red-400': error }">{{ helperText }}
+    </p>
 </template>
 
 <script>
@@ -25,8 +36,15 @@ export default {
             type: String
         },
         size: {
-            required: false,
-            type: String
+            default: 'md',
+            type: String,
+            validator: function (value) {
+                return [
+                    'sm',
+                    'md',
+                    'fullWidth',
+                ].indexOf(value) !== -1
+            }
         },
         disabled: {
             required: false,
@@ -35,13 +53,29 @@ export default {
         error: {
             required: false,
             type: Boolean
+        },
+        helperText: {
+            type: String,
+            default: ''
+        },
+        multiline: {
+            type: Boolean,
+            default: false
         }
     },
-    setup() {
+    setup(props) {
+        const classList = ref([
+            props.size == 'sm' ? 'px-3 py-2.5 w-48' : props.size == 'fullWidth' ? 'px-3 py-4 w-full' : 'px-3 py-4 w-48',
+        ])
 
+        function resize(e) {
+            e.target.style.height = 'auto'
+            e.target.style.height = `${e.target.scrollHeight}px`
+        }
 
         return {
-
+            classList,
+            resize
         }
     }
 }
