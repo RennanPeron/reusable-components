@@ -1,6 +1,6 @@
 <template>
     <button type="button" class="rounded-md flex h-fit gap-2" :class="[buttonClass]" :disabled="disabled">
-        {{ text ? text : 'Default' }}
+        {{ text }}
     </button>
 </template>
 
@@ -11,7 +11,8 @@ export default {
     props: {
         text: {
             required: false,
-            type: String
+            type: String,
+            default: 'Default'
         },
         icon: {
             required: false,
