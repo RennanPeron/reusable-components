@@ -1,29 +1,32 @@
 <template>
-    <label class="flex flex-col text-gray-900" :class="{
-        'focus-within:text-blue-400': !error,
-        'focus-within:text-red-600 text-red-400': error,
-        'w-fit': size != 'fullWidth'
-    }">
-        <span class="block mb-1 noto-sans text-xs">
-            Label
-        </span>
-        <!-- Textarea Option -->
-        <input v-if="!multiline" type="text" placeholder="Placeholder" class="rounded-lg border-2 hover:border-gray-900"
-            :class="[classList], {
-                'focus:border-blue-400 border-gray-400 text-gray-3': !error,
-                'focus:border-red-600 border-red-400 text-gray-3': error,
-                'bg-gray-200': disabled
-            }" :disabled="disabled">
+    <div>
+        <label class="flex flex-col text-gray-900" :class="{
+            'focus-within:text-blue-400': !error,
+            'focus-within:text-red-600 text-red-400': error,
+            'w-fit': size != 'fullWidth'
+        }">
+            <span class="block mb-1 noto-sans text-xs">
+                Label
+            </span>
+            <!-- Textarea Option -->
+            <input v-if="!multiline" type="text" placeholder="Placeholder" class="rounded-lg border-2 hover:border-gray-900"
+                :class="[classList], {
+                    'focus:border-blue-400 border-gray-400 text-gray-3': !error,
+                    'focus:border-red-600 border-red-400 text-gray-3': error,
+                    'bg-gray-200': disabled
+                }" :disabled="disabled">
 
-        <textarea v-else placeholder="Placeholder" class="rounded-lg border-2 overflow-hidden hover:border-gray-900" :class="[classList], {
-            'focus:border-blue-400 border-gray-400 text-gray-3': !error,
-            'focus:border-red-600 border-red-400 text-gray-3': error,
-            'bg-gray-200': disabled
-        }
-            " :disabled="disabled" @input="resize($event)"></textarea>
-    </label>
-    <p class="mt-1 noto-sans text-[0.652rem]" :class="{ 'text-gray-3': !error, 'text-red-400': error }">{{ helperText }}
-    </p>
+            <textarea v-else placeholder="Placeholder" class="rounded-lg border-2 overflow-hidden hover:border-gray-900"
+                :class="[classList], {
+                    'focus:border-blue-400 border-gray-400 text-gray-3': !error,
+                    'focus:border-red-600 border-red-400 text-gray-3': error,
+                    'bg-gray-200': disabled
+                }
+                    " :disabled="disabled" @input="resize($event)"></textarea>
+        </label>
+        <p class="mt-1 noto-sans text-[0.652rem]" :class="{ 'text-gray-3': !error, 'text-red-400': error }">{{ helperText }}
+        </p>
+    </div>
 </template>
 
 <script>
